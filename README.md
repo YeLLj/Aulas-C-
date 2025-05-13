@@ -1,4 +1,3 @@
-# Aulas-C-
 // #include <iostream>
 
 // using namespace std;
@@ -39,11 +38,32 @@
 //     cout << "valor negativo" << endl;
     
 
-  #include <iostream>
-  using namespace std;
+  // #include <iostream>
+  // using namespace std;
 
-  int main() {
-    for(int i = -49; i < 50; i+=2){
-      cout << i << endl;
-    }
-  } 
+  // int main() {
+  //   for(int i = -49; i < 50; i+=2){
+  //     cout << i << endl;
+  //   }
+  // } 
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+struct Aluno(
+string nome;
+int matricula;
+char conceito;
+);
+
+int main(void) {
+  struct Aluno al, aux;
+  al.nome = "Joao";
+  al.matricula = 123456;
+  al.conceito = 'A';
+  aux = al;
+  cout << aux.nome << " " << aux.matricula << " " << aux.conceito << 
+    endl;
+  cout << 
