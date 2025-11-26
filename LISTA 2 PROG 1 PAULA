@@ -1,0 +1,324 @@
+// DISCENTE: EMANOEL NETO SANTOS LUZ
+
+// QUESTÃO 1 
+
+/*
+
+#include <iostream>
+#include <fstream>
+using namespace std;
+int main ()
+ {
+    ifstream arquivo ("oi.txt");
+    string dados;
+
+    arquivo >> dados;
+    cout << dados << endl;
+    arquivo.close();
+    return 0;
+
+ }
+
+ */
+
+ // QUESTÃO 2 
+
+ /*
+
+#include <fstream>
+#include <iostream>
+using namespace std;
+int main()
+{
+	string nome_arquivo, conteudo;
+   cout << "Digite o nome e o conteúdo do arquivo que será criado: ";
+	cin >> nome_arquivo >> conteudo;
+
+	ofstream arquivo(nome_arquivo);
+	arquivo << conteudo;
+	
+	arquivo.close();
+
+   return 0; 
+
+}
+
+*/
+
+// QUESTÃO 3
+
+/*
+
+#include <iostream>
+#include <fstream>
+using namespace std;
+int main () 
+
+{
+	float c,f,k;
+
+	cout << "Digite um valor em celsius: ";
+	cin >> c;
+	
+	k = c + 273;
+	f = c * (1.8) +32 ;
+
+	cout << k << endl << f;
+
+	ofstream arquivo ("temperatura.txt");
+	arquivo << k << f;
+
+	arquivo.close();
+	
+	return 0;
+}
+
+*/
+
+// QUESTÃO 4
+
+/*
+
+#include <iostream>
+#include <fstream>
+using namespace std;
+int main ()
+
+{	
+	string arq1, arq2;
+
+	ifstream arquivo("ete.txt");
+	arquivo >> arq1;
+	arquivo.close();
+
+	ifstream arquivo2("jooj.txt");
+	arquivo2 >> arq2;
+	arquivo.close();
+
+	ofstream arquivo3("arq3.txt");
+	arquivo3 << arq1 << endl << arq2;
+	arquivo.close();
+
+	return 0;
+
+
+}
+
+*/
+
+// QUESTÃO 5
+
+/*
+
+#include <iostream>
+#include <fstream>
+using namespace std;
+int main ()
+
+{
+	int custo, ingresso, conta;
+	ifstream arquivo("teatro.txt");
+	arquivo >> custo >> ingresso;
+
+	conta = (custo / ingresso) + 1;
+	cout << conta;
+
+	ofstream arquivo1("ingresso.txt");
+	arquivo1 << conta;
+
+
+	return 0;
+
+
+}
+
+*/
+
+// QUESTÃO 6 
+
+/*
+
+#include <iostream>
+#include <fstream>
+using namespace std;
+int main ()
+
+{
+	float salario, conta;
+	ifstream arquivo("salario.txt");
+	arquivo >> salario;
+
+	conta = salario * 0.25;
+	cout << conta + salario;
+	arquivo.close();
+
+	return 0;
+
+}
+
+*/
+
+// QUESTÃO 7
+
+/*
+
+#include <iostream>
+#include <fstream>
+using namespace std;
+int main ()
+
+{
+	float coordenada, minuto, segundo;
+	int grau, intmin, intseg;
+
+	cout << "Digite uma coordenada: ";
+	cin >> coordenada;
+
+	grau = coordenada;
+	minuto = (coordenada-grau) * 60;
+	intmin = minuto;
+	segundo = (minuto-intmin) *60;
+	intseg = segundo;
+
+	ofstream arquivo("coordenada.txt");
+	arquivo << grau << endl << intmin << endl << intseg;
+	arquivo.close();
+	
+
+	return 0;
+
+}
+
+*/
+
+// QUESTÃO 8
+
+/*
+
+#include <iostream>
+#include <fstream>
+#include <cmath>
+using namespace std;
+int main()
+
+{
+	float total, valor, parcelas, valorants, prestants, prestdps, valordps, desconto;
+
+
+	ifstream arquivo("venda.txt");
+	arquivo >> valor >> parcelas;
+	arquivo.close();
+
+
+	desconto = (valor/10);
+	total = valor + desconto;
+
+	
+	valorants = total;
+	prestants = total/parcelas;
+	prestdps = prestants - prestants*0.1;
+	valordps = prestdps * parcelas;
+
+
+	ofstream escrever("cliente.txt");
+	escrever << valorants << endl << prestants << endl << prestdps << endl << valordps;
+	escrever.close();
+
+	return 0;
+
+}
+
+*/
+
+// QUESTÃO 9 
+
+/*
+
+#include <iostream>
+#include <fstream>
+#include <cmath>
+using namespace std;
+int main()
+
+{
+	float alturadgr, altdsj, conta;
+
+	ifstream ler("entrada1.txt");
+	cin >> alturadgr >> altdsj;
+	ler.close();
+
+	conta = (altdsj*100)/alturadgr;
+	cout << conta;
+
+
+	return 0;
+
+}
+
+*/
+
+// QUESTÃO 10 
+
+/*
+
+#include <iostream>
+#include <fstream>
+#include <cmath>
+using namespace std;
+int main()
+
+{
+	int hora, min, sec;
+
+	ifstream ler("horasminutos.txt");
+	ler >> hora >> min;
+	ler.close();
+
+	hora = hora*60;
+	min = hora + min;
+	sec = min * 60;
+
+	ofstream escrever("resultado1txt");
+	escrever << hora << endl << min << endl << sec;
+	escrever.close();
+	
+	return 0;
+
+
+}
+
+*/
+
+// QUESTAO 11
+
+/*
+#include <iostream>
+#include <fstream>
+using namespace std;
+int main()
+
+{
+	int total;
+	float silvbiol, silvofc, silvidsbiol, silvidsofc;
+
+	cout << "Digite o tamanho total da população: ";
+	cin >> total;
+
+	silvbiol = total * 0.11;
+	silvofc = silvbiol - (silvbiol * 0.27);
+	silvidsbiol = silvbiol / 3;
+	silvidsofc = silvofc / 4;
+
+
+	cout << int(silvbiol) << endl << int(silvofc) << endl << int(silvidsbiol) << endl << int(silvidsofc);
+
+	ofstream escrever("resultado1.txt");
+	escrever << int(silvbiol) << endl << int(silvofc) << endl << int(silvidsbiol) << endl << int(silvidsofc);
+	escrever.close();
+
+	return 0;
+
+}
+
+*/
+
