@@ -1,0 +1,34 @@
+ // LISTA 4 - PROG 1 PAULA // 
+
+// QUESTAO 10 
+#include <iostream>
+using namespace std;
+int main ()
+
+{
+    float preco, total;
+    int dia;
+    char categoria;
+
+    cout << "Qual o valor do ingresso?: ";
+    cin >> preco;
+    while (dia != -1)
+    {
+    cout << "Digite o dia e a categoria: ";
+    cin >> dia >> categoria;
+    if (dia >= 1 and dia <= 13){
+        if (categoria =='E')
+        total += preco * 0.8;
+        else if (categoria == 'A')
+        total += preco * 0.9;
+    } else if (dia >= 14 and dia <= 31){
+        if (categoria == 'E')
+        total += preco * 0.9;
+        else if (categoria == 'A')
+        total += preco * 0.95;
+     }
+    }
+    cout << "Total" << total;
+
+    return 0;
+}
